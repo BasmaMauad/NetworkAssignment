@@ -26,7 +26,10 @@ def CRC(frame,genterator):
 	        for j in range(order - len(result)-1):
 	            result = "0" + result
 	    index = index +1
-	message = str(int(frame)^int(result))
+	till = len(frame)-len(result)
+    	message = frame[:till]
+    	for i in range(len(result)):
+        	message = message + str(int(frame[till+i]) ^ int(result[i]))
 	#print(frame)
 	#print(result)
     #print(message)
